@@ -1,0 +1,23 @@
+{
+  "name": "justifiedgallery",
+  "version": "1.0.0",
+  "description": "an algorithm for aligning images in a justified grid",
+  "main": "built/index.js",
+  "typings": "built/index",
+  "scripts": {
+    "test": "echo \"\"\u001b[DNo tests are available at the moment\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfzero/justifiedGallery.git"
+  },
+  "keywords": [
+    "justified"
+  ],
+  "author": "pfzero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfzero/justifiedGallery/issues"
+  },
+  "homepage": "https://github.com/pfzero/justifiedGallery#readme"
+}
