@@ -1,4 +1,4 @@
-import { INormalizedImage, IResizedImage, ISettings } from "types";
+import { INormalizedImage, IResizedImage, ISettings } from "./types";
 declare class GridRow {
     private containerWidth;
     private cumulatedWidth;

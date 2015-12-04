@@ -10,6 +10,6 @@
         "declaration": true
     },
     "exclude": [
-        "node_modules"
+        "node_modules", "./src/types.ts"
     ]
 }

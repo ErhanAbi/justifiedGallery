@@ -1,21 +1,20 @@
 
 import * as _ from "lodash";
 import {resize, setTargetSize} from "./utility";
-import {ReadImageMeta, ReadImageFiles, IImageDimensions, IComputedImge, INormalizedImage, IResizedImage, ISettings} from "types";
-
+import {ReadImageMeta, ReadImageFiles, IImageDimensions, IComputedImge, INormalizedImage, IResizedImage, ISettings} from "./types";
 
 /**
  * GridRow computes the number of items that can fit in this row based on the given settings and images;
- * 
+ *
  * Note that this will remove the used images from the received list
- * 
+ *
  * @internally this class is used for computing the grid gallery
  */
 class GridRow {
-  
+
   // container's width we need to put the images into
   private containerWidth: number
-  
+
   // indicates the width cumulated
   private cumulatedWidth: number
 
@@ -25,21 +24,21 @@ class GridRow {
   // the calculated height so that the images in this row will fit the
   // container's width
   private currentHeight: number
-  
+
   // the base height value we are targeting to have for this row;
   // ideally, the row's currentHeight will be the same value with targetHeight
   private targetHeight: number
-  
+
   // accepted minimum height; images having a smaller height will be removed
   private minHeight: number
 
   // accepted maximum height; more images will get into this row if height it's
-  // bigger than this value  
+  // bigger than this value
   private maxHeight: number
 
   // remaining items to use when filling the row
   private remainingItems: Array<INormalizedImage>
-  
+
   // list of items within this row
   private rowItems: Array<IResizedImage>
 
@@ -92,7 +91,7 @@ class GridRow {
   }
 
   /**
-   * recomputeRow() readjusts row's dimensions - cumulatedWidth and currentHeight - 
+   * recomputeRow() readjusts row's dimensions - cumulatedWidth and currentHeight -
    * based on currently added images or an optional height parameter
    */
   private recomputeRow(optHeight?: number): void {

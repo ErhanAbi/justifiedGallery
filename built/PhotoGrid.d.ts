@@ -1,6 +1,5 @@
 /// <reference path="../src/defs.d.ts" />
-/// <reference path="types.d.ts" />
-import { IImageDimensions, ISettings } from "types";
+import { IImageDimensions, ISettings } from "./types";
 import GridRow from "./GridRow";
 declare class PhotoGrid {
     settings: ISettings<IImageDimensions>;

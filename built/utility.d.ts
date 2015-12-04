@@ -1,4 +1,4 @@
-import { IImageDimensions, INormalizedImage } from "types";
+import { IImageDimensions, INormalizedImage } from "./types";
 declare function setTargetSize(item: INormalizedImage, targetHeight: number): INormalizedImage;
 declare function resize(item: IImageDimensions, newSize: {
     width?: number;

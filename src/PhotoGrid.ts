@@ -1,8 +1,7 @@
 /// <reference path="./defs.d.ts"/>
-/// <reference path="./types.ts"/>
 
 import * as _ from "lodash";
-import {ReadImageMeta, ReadImageFiles, IImageDimensions, IComputedImge, INormalizedImage, IResizedImage, ISettings} from "types";
+import {ReadImageMeta, ReadImageFiles, IImageDimensions, IComputedImge, INormalizedImage, IResizedImage, ISettings} from "./types";
 import {resize, setTargetSize} from "./utility";
 import GridRow from "./GridRow";
 
@@ -38,7 +37,7 @@ class PhotoGrid {
 
   private getImageMeta: ReadImageMeta<IImageDimensions>
   private filesGetter: ReadImageFiles<IImageDimensions>
-  
+
   // list of images that will be used for creating rows of images
   private items: Array<INormalizedImage>
   // copy of the original received list of images

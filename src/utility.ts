@@ -1,5 +1,5 @@
 
-import {IImageDimensions, INormalizedImage} from "types";
+import {IImageDimensions, INormalizedImage} from "./types";
 
 function setTargetSize(item: INormalizedImage, targetHeight: number) {
   const w = item.width,
