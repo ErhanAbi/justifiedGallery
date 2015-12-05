@@ -14,4 +14,4 @@ declare class PhotoGrid {
     private setBestFiles();
     getRows(width: number): Array<GridRow>;
 }
-export { PhotoGrid };
+export default PhotoGrid;

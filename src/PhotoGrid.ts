@@ -129,4 +129,4 @@ class PhotoGrid {
   }
 }
 
-export {PhotoGrid};
+export default PhotoGrid;

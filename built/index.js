@@ -1,3 +1,3 @@
 var PhotoGrid_1 = require('./PhotoGrid');
-exports.PhotoGrid = PhotoGrid_1.PhotoGrid;
+exports.default = PhotoGrid_1.default;
 //# sourceMappingURL=index.js.map

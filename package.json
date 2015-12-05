@@ -1,6 +1,6 @@
 {
   "name": "justifiedgallery",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "an algorithm for aligning images in a justified grid",
   "main": "built/index.js",
   "typings": "built/index",

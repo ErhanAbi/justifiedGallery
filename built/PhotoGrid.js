@@ -58,5 +58,6 @@ var PhotoGrid = (function () {
     };
     return PhotoGrid;
 })();
-exports.PhotoGrid = PhotoGrid;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = PhotoGrid;
 //# sourceMappingURL=PhotoGrid.js.map
