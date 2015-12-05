@@ -1,1 +1,1 @@
-export * from './PhotoGrid';
+export { PhotoGrid } from './PhotoGrid';
