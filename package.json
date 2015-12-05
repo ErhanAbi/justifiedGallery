@@ -5,7 +5,7 @@
   "main": "built/index.js",
   "typings": "built/index",
   "scripts": {
-    "test": "echo \"\"\u001b[DNo tests are available at the moment\""
+    "test": "echo \"No tests are available at the moment\""
   },
   "repository": {
     "type": "git",
