@@ -2,8 +2,7 @@
 import {IImageDimensions, INormalizedImage, IResizedImage} from "./types";
 
 function setTargetSize(item: INormalizedImage, targetHeight: number): IResizedImage {
-  const w = item.width,
-    h = item.height;
+  const h = item.height;
 
   let targetSize = {
     height: Math.min(targetHeight, h)

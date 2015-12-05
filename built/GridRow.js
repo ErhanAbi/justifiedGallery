@@ -2,6 +2,7 @@ var _ = require("lodash");
 var utility_1 = require("./utility");
 var GridRow = (function () {
     function GridRow(settings, items) {
+        this.rowItems = [];
         this.targetHeight = settings.targetHeight || 200;
         this.containerWidth = settings.containerWidth;
         this.cumulatedWidth = 0;

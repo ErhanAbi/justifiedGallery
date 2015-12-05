@@ -40,7 +40,7 @@ class GridRow {
   private remainingItems: Array<INormalizedImage>
 
   // list of items within this row
-  private rowItems: Array<IResizedImage>
+  private rowItems: Array<IResizedImage> = <Array<IResizedImage>>[]
 
   constructor(settings: ISettings<INormalizedImage>, items: Array<INormalizedImage>) {
     this.targetHeight = settings.targetHeight || 200;
@@ -48,7 +48,7 @@ class GridRow {
     this.cumulatedWidth = 0;
     this.currentHeight = this.targetHeight;
     this.minHeight = settings.minHeight || 100;
-    this.maxHeight = settings.maxHeight || Infinity;
+    this.maxHeight = settings.maxHeight || 400;
     this.borderWidth = settings.borderWidth || 0;
     this.remainingItems = items;
 
@@ -150,9 +150,7 @@ class GridRow {
     const cumulatedBorderWidth = items.length * this.borderWidth;
     const imagesTotalWidth = this.containerWidth - cumulatedBorderWidth;
     const imagesCumulatedWidth = this.cumulatedWidth - cumulatedBorderWidth;
-
     const widthDelta = imagesTotalWidth - imagesCumulatedWidth;
-    const smallestImage = _.min(items, (item) => item.width);
 
     items.forEach((item) => {
 

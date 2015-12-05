@@ -1,5 +1,5 @@
 function setTargetSize(item, targetHeight) {
-    var w = item.width, h = item.height;
+    var h = item.height;
     var targetSize = {
         height: Math.min(targetHeight, h)
     };
