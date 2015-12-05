@@ -1,6 +1,6 @@
 {
   "name": "justifiedgallery",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "an algorithm for aligning images in a justified grid",
   "main": "built/index.js",
   "typings": "built/index",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pfzero/justifiedGallery/issues"
   },
-  "homepage": "https://github.com/pfzero/justifiedGallery#readme"
+  "homepage": "https://github.com/pfzero/justifiedGallery#readme",
+  "dependencies": {
+    "lodash": "3.x.x"
+  }
 }
