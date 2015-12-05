@@ -1,7 +1,7 @@
 
-import {IImageDimensions, INormalizedImage} from "./types";
+import {IImageDimensions, INormalizedImage, IResizedImage} from "./types";
 
-function setTargetSize(item: INormalizedImage, targetHeight: number) {
+function setTargetSize(item: INormalizedImage, targetHeight: number): IResizedImage {
   const w = item.width,
     h = item.height;
 
@@ -14,7 +14,7 @@ function setTargetSize(item: INormalizedImage, targetHeight: number) {
   return item;
 };
 
-function resize(item: IImageDimensions, newSize: { width?: number, height?: number }) {
+function resize(item: IImageDimensions, newSize: { width?: number, height?: number }): IImageDimensions {
   const newWidth = newSize.width,
     newHeight = newSize.height,
     itemHeight = item.height,

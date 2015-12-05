@@ -1,7 +1,7 @@
-import { IImageDimensions, INormalizedImage } from "./types";
-declare function setTargetSize(item: INormalizedImage, targetHeight: number): INormalizedImage;
+import { IImageDimensions, INormalizedImage, IResizedImage } from "./types";
+declare function setTargetSize(item: INormalizedImage, targetHeight: number): IResizedImage;
 declare function resize(item: IImageDimensions, newSize: {
     width?: number;
     height?: number;
-}): INormalizedImage;
+}): IImageDimensions;
 export { setTargetSize, resize };

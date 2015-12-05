@@ -176,7 +176,7 @@ class GridRow {
    * the rows
    * @param  {Number} newContainerWidth new container's width
    */
-  public changeContainerWidth(newContainerWidth) {
+  public changeContainerWidth(newContainerWidth: number) {
     this.containerWidth = newContainerWidth;
     this.setExactSizeOnItems();
   }

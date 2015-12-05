@@ -14,7 +14,7 @@ declare class GridRow {
     private recomputeRow(optHeight?);
     private makeRow();
     private setExactSizeOnItems();
-    changeContainerWidth(newContainerWidth: any): void;
+    changeContainerWidth(newContainerWidth: number): void;
     getItems(): Array<IResizedImage>;
 }
 export default GridRow;

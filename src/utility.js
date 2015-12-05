@@ -22,4 +22,3 @@ function resize(item, newSize) {
     return resizedDimensions;
 }
 exports.resize = resize;
-//# sourceMappingURL=utility.js.map

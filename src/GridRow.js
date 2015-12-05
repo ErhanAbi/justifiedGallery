@@ -1,5 +1,12 @@
 var _ = require("lodash");
 var utility_1 = require("./utility");
+/**
+ * GridRow computes the number of items that can fit in this row based on the given settings and images;
+ *
+ * Note that this will remove the used images from the received list
+ *
+ * @internally this class is used for computing the grid gallery
+ */
 var GridRow = (function () {
     function GridRow(settings, items) {
         this.targetHeight = settings.targetHeight || 200;
@@ -12,6 +19,11 @@ var GridRow = (function () {
         this.remainingItems = items;
         this.makeRow();
     }
+    /**
+     * canAccept() checks if the given image can fit this row, based on cumulated with;
+     * It also takes into account the height of the row which is set by the previous items added
+     * to this row;
+     */
     GridRow.prototype.canAccept = function (candidateImage) {
         var hasSmallImage = this.currentHeight < this.targetHeight;
         var isEmptyRow = this.getItems().length === 0;
@@ -36,6 +48,10 @@ var GridRow = (function () {
             this.recomputeRow(currentHeight);
         return (imageWidth * acceptanceRatio * surplusRatio <= this.containerWidth - this.cumulatedWidth);
     };
+    /**
+     * recomputeRow() readjusts row's dimensions - cumulatedWidth and currentHeight -
+     * based on currently added images or an optional height parameter
+     */
     GridRow.prototype.recomputeRow = function (optHeight) {
         var _this = this;
         var heights = this.getItems().map(function (image) {
@@ -50,16 +66,22 @@ var GridRow = (function () {
             return result;
         }, 0);
     };
+    /**
+     * makeRow() fills the row with images
+     */
     GridRow.prototype.makeRow = function () {
         while (this.remainingItems.length > 0) {
             var candidateImage = this.remainingItems[0];
+            // we're done
             if (this.cumulatedWidth >= this.containerWidth) {
                 break;
             }
+            // remove the image if it's not compatible with our image gallery settings
             if (candidateImage.targetSize.height < this.minHeight) {
                 this.remainingItems.splice(0, 1);
                 continue;
             }
+            // check if we can add the image in this row
             if (this.canAccept(candidateImage)) {
                 this.getItems().push(candidateImage);
                 this.recomputeRow();
@@ -70,6 +92,10 @@ var GridRow = (function () {
         }
         return this.setExactSizeOnItems();
     };
+    /**
+     * setExactSizeOnItems() will resize the images, after the row was filled, so that
+     * the whole row width is filled
+     */
     GridRow.prototype.setExactSizeOnItems = function () {
         var items = this.getItems();
         var cumulatedBorderWidth = items.length * this.borderWidth;
@@ -78,6 +104,7 @@ var GridRow = (function () {
         var widthDelta = imagesTotalWidth - imagesCumulatedWidth;
         var smallestImage = _.min(items, function (item) { return item.width; });
         items.forEach(function (item) {
+            // let the original layout in this case
             if (widthDelta >= imagesCumulatedWidth) {
                 item.resized = item.targetSize;
                 return;
@@ -88,6 +115,12 @@ var GridRow = (function () {
             });
         });
     };
+    /**
+     * changeContainerWidth changes the row's container width
+     * use this with caution; this method is used internally for caching
+     * the rows
+     * @param  {Number} newContainerWidth new container's width
+     */
     GridRow.prototype.changeContainerWidth = function (newContainerWidth) {
         this.containerWidth = newContainerWidth;
         this.setExactSizeOnItems();
@@ -97,6 +130,4 @@ var GridRow = (function () {
     };
     return GridRow;
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = GridRow;
-//# sourceMappingURL=GridRow.js.map
+exports["default"] = GridRow;

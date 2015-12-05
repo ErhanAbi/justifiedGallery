@@ -33,7 +33,7 @@ import GridRow from "./GridRow";
  *   let row0 = rows[0];
  *   let row0Items = row0.getItems();
  */
-class PhotoGrid {
+export class PhotoGrid {
 
   private getImageMeta: ReadImageMeta<IImageDimensions>
   private filesGetter: ReadImageFiles<IImageDimensions>
@@ -128,5 +128,3 @@ class PhotoGrid {
     return this.rows;
   }
 }
-
-export default PhotoGrid;

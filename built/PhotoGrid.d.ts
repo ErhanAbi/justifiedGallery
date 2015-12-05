@@ -1,7 +1,7 @@
 /// <reference path="../src/defs.d.ts" />
 import { IImageDimensions, ISettings } from "./types";
 import GridRow from "./GridRow";
-declare class PhotoGrid {
+export declare class PhotoGrid {
     settings: ISettings<IImageDimensions>;
     private getImageMeta;
     private filesGetter;
@@ -14,4 +14,3 @@ declare class PhotoGrid {
     private setBestFiles();
     getRows(width: number): Array<GridRow>;
 }
-export default PhotoGrid;
