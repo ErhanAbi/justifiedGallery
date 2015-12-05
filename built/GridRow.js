@@ -1,4 +1,3 @@
-var _ = require("lodash");
 var utility_1 = require("./utility");
 var GridRow = (function () {
     function GridRow(settings, items) {
@@ -8,7 +7,7 @@ var GridRow = (function () {
         this.cumulatedWidth = 0;
         this.currentHeight = this.targetHeight;
         this.minHeight = settings.minHeight || 100;
-        this.maxHeight = settings.maxHeight || Infinity;
+        this.maxHeight = settings.maxHeight || 400;
         this.borderWidth = settings.borderWidth || 0;
         this.remainingItems = items;
         this.makeRow();
@@ -77,7 +76,6 @@ var GridRow = (function () {
         var imagesTotalWidth = this.containerWidth - cumulatedBorderWidth;
         var imagesCumulatedWidth = this.cumulatedWidth - cumulatedBorderWidth;
         var widthDelta = imagesTotalWidth - imagesCumulatedWidth;
-        var smallestImage = _.min(items, function (item) { return item.width; });
         items.forEach(function (item) {
             if (widthDelta >= imagesCumulatedWidth) {
                 item.resized = item.targetSize;
