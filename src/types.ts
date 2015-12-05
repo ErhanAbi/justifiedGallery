@@ -18,7 +18,7 @@ export interface IComputedImge extends IImageDimensions {
 
 export interface INormalizedImage extends IImageDimensions {
   targetSize?: IImageDimensions
-  files?: Array<IImageDimensions>
+  files?: Array<IImageDimensions> | {[k: string]: IImageDimensions}
 }
 
 export interface IResizedImage extends INormalizedImage {
