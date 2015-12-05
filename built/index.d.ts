@@ -1,1 +1,2 @@
-export { default } from './PhotoGrid';
+import PhotoGrid from './PhotoGrid';
+export default PhotoGrid;
