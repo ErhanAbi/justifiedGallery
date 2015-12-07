@@ -2,6 +2,14 @@
 
 JustifiedGallery is the algorithm part needed to compute a grid of images a la flickr [explore page](https://www.flickr.com/explore).
 
+## Instalation
+
+In your project
+
+`npm install justifiedgallery --save`
+
+Since it's an npm module, use it with [webpack](https://webpack.github.io/) or [browserify](http://browserify.org/)
+
 ## Usage
 
 ```javascript
