@@ -2,6 +2,9 @@
 
 JustifiedGallery is the algorithm part needed to compute a grid of images a la flickr [explore page](https://www.flickr.com/explore).
 
+## Demo
+You can check a plain vanilla javascript demo [here](http://j.mp/justifiedGrid)
+
 ## Instalation
 
 In your project
